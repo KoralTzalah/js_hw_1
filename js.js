@@ -1,104 +1,144 @@
-//מגישות:
-//קארין ואנונו 
-// קורל צלח 
-//כיתת תוכנה 50.5
-
-//1
-let name = 'Mary '
-let activity = 'drink tea'
-let bio = 'Our guest ' + name + activity + '.'
-console.log (bio.length); //אורך המחרוזת
-
-//2
-const str = 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.'
-const charAtIndex4 = str.charAt(4);
-console.log(` char #4 is: "${charAtIndex4}"`); //הצגת התו הרביעי של המחרוזת 
-
-//3
-const firstChar = str.charAt(0);
-console.log(`first char is: "${firstChar}"`); // הצגת התו הראשון של המחרוזת
-
-const secondToLastIndex = str.length - 2;
-const secondToLastChar = str.charAt(secondToLastIndex);
-console.log(`The penultimate character is: "${secondToLastChar}"`); //הצגת התו לפני אחרון
-
-//4
-const TheString = `abcde`;
-let reversedString = '';
-for (let i = TheString.length - 1; i >= 0; i--) {
-  reversedString += TheString[i];
+//True or False
+//task#1
+if("0"){
+  alert('Hello');
 }
-console.log(reversedString); //החזרת המחרוזת הפוך
 
-//5
-const string= `js`;
-console.log(string.toUpperCase()); //מחרוזת מאותיות קטנות לגדולות
+//there is alert! the string is not "empty"
 
-//6
-const str1= 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.'.includes(`str`)
-console.log(str1); //בודק אם STR מופיע במחרוזת
+//task#2
+let fName=prompt("What is the formal name of JavaScript?");
+if(fName == 'ECMAScript'){
+  alert('Correct!');
+}else{
+  alert('Do you not know? ECMAScript!');
+}
 
-//7
-let StringNumber = `1-2-3-4-5`;
-StringNumber = StringNumber.replaceAll('-', '.');
-console.log(StringNumber); // מחליף את כל התווים "-" לנקודות
+//task#3
+let score = 75;
+let grade = (score >= 90)? "A":
+            (score >= 80)? "B":
+            (score >= 70)? "C":
+            (score >= 60)? "D": "F";
 
-//8
-let StringNumber1 = `1-2-3-4-5`;
-const NewString = StringNumber1.replaceAll (`-`, `.`);
-console.log(NewString); // מחליף את כל ה "-" בנקודה בעזאת פקודה אחרת 
+console.log("הציון הוא:", grade);
 
-//9
-const str2=`sdfwe`;
-console.log (str2.substring(4,2)); // fw 
-// מה הפלט
+//task#4
+let num=Number(prompt('Enter number:'));
+if(num > 0){
+  alert(1);
+}else if(num < 0){
+  alert(-1);
+}else if(num === 0){
+  alert(0);
+}else{
+  alert('it is not a number');
+}
 
-//10
-const str3= "I'm learning javascript!";
-//אופציה ראשונה 
-console.log(str3.slice(3,12)); //slice
-//אופציה שניה 
-console.log(str3.substring(3,12)); //substring
-//אופציה שלישית
-console.log(str3.substr(3,10)); //substr
+//task#5
+let result;
+let a=Number(prompt('Enter number to a:'));
+let b=Number(prompt('Enter number to b:'));
+result = (a + b < 4)? 'Not enough': 'A lot';
+console.log(result);
 
-//11
-const str4= 'http://www.notion.so/String-820cf1e906884d8fb9c02236fe1c6dcb/'
-console.log(str4.indexOf('http://')); //0
-//אם המחרוזת לא נמצאת השיטה תחזיר -1 אם כן תחזיר 0
+//task#6
+let message;
+let login=prompt('what is your role?');
+let massage = (login == 'Employee')? 'Hello':
+            (login == 'Director')? 'Hello':
+            (login == '')? 'No login': '';
+console.log(massage);
 
-//12
-const str5= 'https://www.notion.html'
-console.log(str4.indexOf(`.html`)); //-1
 
-//13
-const str6=`ab cd cd cd ef`;
-console.log(str6.lastIndexOf(`cd`));//9
-console.log(str6.lastIndexOf(`cd` , 8));//6
-// מה הפלט
+//task#7
+console.log(false || 'sdf'); //sdf
+console.log(false && ''); //false
+console.log(true || ''); //true
+console.log(true && ''); //''
+console.log(undefined || null); //null
+console.log(undefined || 0 || null); //null
+console.log(undefined && 0 && null); //undefined
+console.log(1 || 0); //1
+console.log(null || 1); //1
+console.log(null || 0|| 1); //1
 
-//14
-const str7=`abcde`;
-console.log(str7.startsWith(`abc`)); //true
-console.log(str7.startsWith(`xxx`));//false
-console.log(str7.startsWith(`bc`, 1));//true
-//מה הפלט
+//Loops
+//task#1
+let i=1;
+let sum=0;
+while(i!=101){
+  sum+=i;
+  i++;
+}
+console.log(sum);
 
-//15
-console.log(str7.startsWith(`cde`));//false
-console.log(str7.startsWith(`xxx`));//false
-console.log(str7.startsWith(`bc`, 3));//false
-//מה הפלט
+//task#2
+let num1;
+do{
+  num1=prompt("Enter a number:");
+}while(num1<=0 || isNaN(num1));
 
-//16
-const str8= `ab-cd-ef`;
-console.log(str8.split(`-`)); // 3 ', 'b', '-', 'c', 'd', '-', 'e', 'f']
-console.log(str8.split(`-`, 2)); // (2) ['ab', 'cd']
-console.log(str8.split(``));// (8) ['a', 'b', '-', 'c', 'd', '-', 'e', 'f']
-console.log(str8.split(``, 8));// (8) ['a', 'b', '-', 'c', 'd', '-', 'e', 'f']
+//task#3
+for(let j=1;j<=10; j++){
+  console.log('7 x '+j+ ' = '+ (7*j))
+}
 
-let str9=`12345`;
-console.log(str9.split(``));// (5) ['1', '2', '3', '4', '5']
+//task#4
+const secret =7;
+let g=Number(prompt("Guess a number between 1-10:"));
+for(let i=0; i<5; i++){
+  if(g===secret){
+    alert("you right!");
+    break;
+  }else{
+    g=Number(prompt("wrong, Try again:"));
+  }
+}
 
-//end
+//task#5
+for (let i = 1; i <= 30; i++) {
+  if (i % 3 == 0) continue;
+  console.log(i);
+}
 
+//task#6
+let i2 = 3;
+while (i2) {
+  alert( i2-- ); //ערך אחרון שמדפיס הוא 1 כי 0 הוא שקר ןלא נכנס ללולאה
+}
+
+//task#7
+let i3 = 0;
+while (++i3 <5) console.log(i3); //1,2,3,4
+
+let i4 = 0;
+while (i4++ <5) console.log(i4); //1,2,3,4,5
+
+//task#8
+for (let i5 = 0; i5 < 5; i5++) console.log(i5); //0,1,2,3,4
+for (let i6 = 0; i6 < 5; ++i6) console.log(i6); //0,1,2,3,4
+
+//task#9
+for (let i7 = 2; i7 <= 10; i7++) {
+  if (i7 % 2 == 1) continue;
+  console.log(i7);
+}
+
+//task#10
+let i8 = 0;
+while(i8<3){
+  console.log( `number ${i8}!` );
+  i8++
+}
+
+//String Methods
+//task#17
+const person1 = { name: "יוסי", age: 30 };
+const person2 = { name: "דנה", age: 25 };
+
+console.log(
+  person1.name.toLowerCase().localeCompare(person2.name.toLowerCase()) === -1 ?
+ `${person1.name} is first`:
+ `${person2.name} is first`
+);
