@@ -132,13 +132,3 @@ while(i8<3){
   i8++
 }
 
-//String Methods
-//task#17
-const person1 = { name: "יוסי", age: 30 };
-const person2 = { name: "דנה", age: 25 };
-
-console.log(
-  person1.name.toLowerCase().localeCompare(person2.name.toLowerCase()) === -1 ?
- `${person1.name} is first`:
- `${person2.name} is first`
-);
